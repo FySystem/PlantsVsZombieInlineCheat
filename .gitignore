@@ -1,6 +1,7 @@
 # Build and Release Folders
 bin-debug/
 bin-release/
+Debug/
 [Oo]bj/
 [Bb]in/
 
@@ -12,6 +13,11 @@ bin-release/
 *.air
 *.ipa
 *.apk
+
+.vs/
+.git/
+x64/
+x86/
 
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
