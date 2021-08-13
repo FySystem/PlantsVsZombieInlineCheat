@@ -39,7 +39,7 @@ Hacker::Hacker()
 		LPVOID(Offset::PlantsCD),
 		m_OldPlantsCD_Address, 
 		sizeof(m_OldPlantsCD_Address), nullptr);
-	for (int i = 0; i < 6; i++) {
+	for (int i = 0; i < sizeof(m_NewPlantsCD_Address); i++) {
 		m_NewPlantsCD_Address[i] = '\x90';
 	}
 	ReadProcessMemory(GetCurrentProcess(),
@@ -129,7 +129,8 @@ BOOL Hacker::EnablePlantsCD()
 {
 	if (WriteProcessMemory(GetCurrentProcess(),
 		LPVOID(Offset::PlantsCD),
-		m_NewPlantsCD_Address, 6, nullptr)) {
+		m_NewPlantsCD_Address, 
+		sizeof(m_NewPlantsCD_Address), nullptr)) {
 		return TRUE;
 	}
 	return FALSE;
@@ -139,7 +140,7 @@ BOOL Hacker::DisablePlantsCD()
 	if (WriteProcessMemory(GetCurrentProcess(),
 		LPVOID(Offset::PlantsCD),
 		m_OldPlantsCD_Address,
-		6, nullptr)) {
+		sizeof(m_OldPlantsCD_Address), nullptr)) {
 		return TRUE;
 	}
 	return FALSE;

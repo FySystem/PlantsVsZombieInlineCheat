@@ -4,7 +4,7 @@ using namespace std;
 void Worker::init()
 {
 	AllocConsole();
-	SetConsoleTitleA("test");
+	SetConsoleTitleA("QQ:2783538268");
 	freopen("CON", "w", stdout);
 }
 
